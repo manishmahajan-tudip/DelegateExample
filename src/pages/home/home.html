@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p>
+   I am comming from home data model....
+  </p>
+  <p *ngFor="let data of empNameArray">
+     <strong>{{data.emp_firstname}} {{data.emp_lastname}}</strong>
+  </p>
+</ion-content>
