@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 export interface HomeDataModelHelperDelegate {
     homeDataUpdated(string);
@@ -25,11 +27,16 @@ export class HomeDataModelHelper {
           this.homeDataArray.push(new HomeDataModel(data[index]));
         }
         this.homeDataDelegate.homeDataUpdated(this.homeDataArray);
-      })  
+      }, err => {
+          console.log("Error: ",err);
+      })
   }
 
   getHomeDataFromAPI(): Observable<any> {
     return this._http.get(this.url)
-      .map(res => res.json());
+      .map(res => res.json())
+      .catch(err => {
+          return Observable.throw(err || "Server Error"); 
+      });
   }
 }

@@ -10,7 +10,8 @@
   <p>
    This is raw posts data fetching from home data model
   </p>
-  <p *ngFor="let data of postsDataArray">
+  <a href="#" (click)="goToNextPage()">Go To Profile Page</a>
+  <p *ngFor="let data of staticPostDataArray">
      <strong>Id: </strong>{{data.id}}<br>
      <strong>User Id: </strong>{{data.userId}}<br>
      <strong>Title: </strong>{{data.title}}<br>
