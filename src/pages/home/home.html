@@ -8,9 +8,12 @@
 
 <ion-content padding>
   <p>
-   I am comming from home data model....
+   This is raw posts data fetching from home data model
   </p>
-  <p *ngFor="let data of empNameArray">
-     <strong>{{data.emp_firstname}} {{data.emp_lastname}}</strong>
+  <p *ngFor="let data of postsDataArray">
+     <strong>Id: </strong>{{data.id}}<br>
+     <strong>User Id: </strong>{{data.userId}}<br>
+     <strong>Title: </strong>{{data.title}}<br>
+     <strong>Body: </strong>{{data.body}}
   </p>
 </ion-content>

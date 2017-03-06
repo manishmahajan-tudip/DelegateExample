@@ -9,15 +9,14 @@ import { HomeDataModelHelper, HomeDataModelHelperDelegate } from './home-data-mo
 })
 export class HomePage implements HomeDataModelHelperDelegate {
 
-  empNameArray: Array<string> = new Array<string>();
+  postsDataArray: Array<string> = new Array<string>();
 
-  constructor(public navCtrl: NavController, public homeDataModel: HomeDataModelHelper) {
-    this.homeDataModel.homeDataDelegate = this;
-    this.homeDataModel.getHomeData();
+  constructor(public navCtrl: NavController, public homeDataModelHelper: HomeDataModelHelper) {
+    this.homeDataModelHelper.homeDataDelegate = this;
+    this.homeDataModelHelper.getHomeData();
   }
 
   homeDataUpdated(data) {
-    this.empNameArray = data;
-    console.log("emp name array", this.empNameArray);
+    this.postsDataArray = data;
   }
 }

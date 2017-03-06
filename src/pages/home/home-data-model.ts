@@ -2,11 +2,15 @@
 //This is data model to store data.
 export class HomeDataModel {
 
-  emp_firstname: string;
-  emp_lastname: string;
+  body: string = null;
+  title: string = null;
+  id: number = null;
+  userId: number = null;
 
   constructor(data) {
-    this.emp_firstname = data.emp_firstname;
-    this.emp_lastname = data.emp_lastname;
+    this.body = data.body;
+    this.id = data.id;
+    this.title = data.title;
+    this.userId = data.userId;
   }
 }
